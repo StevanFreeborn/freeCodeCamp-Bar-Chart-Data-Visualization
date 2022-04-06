@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function(){
         .attr("fill", "#db3e3e")
         .attr("index", (d,i) => i)
         .on("mouseover", (event, d) => {
-            console.log(event.target.attributes);
+            
             // get the index value of the moused over bar
             let index = event.target.attributes.index.value;
             
