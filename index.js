@@ -3,7 +3,7 @@ let height = 400;
 let barWidth = width / 275;
 
 let svgContainer = d3
-    .select('bar-chart')
+    .select('.bar-chart')
     .append('svg')
     .attr('width', width + 100)
     .attr('height', height + 60);
@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', function(){
     request.onload = function(){
         const json = JSON.parse(request.responseText);
         
-        
+        console.log(json.data);
 
+        const minX = d3.min(json.data, (data) => data[0]);
+        const maxX = d3.max(json.data, (data) => data[0]);
+        console.log(minX, maxX);
         const xScale = undefined;
         const xAxis = undefined;
 
